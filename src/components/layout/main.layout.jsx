@@ -52,6 +52,7 @@ const MainLayout = () => {
 					setSwiper(swiper);
 				}}
 			>
+				{/* - The first slide that contains the header and the welcome page - */}
 				<SwiperSlide className="relative w-full !h-full flex flex-col">
 					<div className="relative w-full h-full flex flex-col">
 						<Header
@@ -62,26 +63,13 @@ const MainLayout = () => {
 						<WelcomePage />
 					</div>
 				</SwiperSlide>
+				{/* - The second slide that contains the about us page - */}
 				<SwiperSlide className="w-full !h-full flex flex-col">
 					<div className="relative w-full h-full flex flex-col">
 						<AboutUsPage />
 					</div>
 				</SwiperSlide>
-				<SwiperSlide className="w-full !h-full flex flex-col">
-					Slide 3
-				</SwiperSlide>
-				<SwiperSlide className="w-full !h-full flex flex-col">
-					Slide 4
-				</SwiperSlide>
-				<SwiperSlide className="w-full !h-full flex flex-col">
-					Slide 5
-				</SwiperSlide>
-				<SwiperSlide className="w-full !h-full flex flex-col">
-					Slide 6
-				</SwiperSlide>
-				<SwiperSlide className="w-full !h-full flex flex-col">
-					Slide 7
-				</SwiperSlide>
+				{/* - The third slide that contains the footer - */}
 				<SwiperSlide className="w-full !h-fit">Footer</SwiperSlide>
 			</Swiper>
 			{/* - The button to open the navigation bar for smaller resolution devices - */}

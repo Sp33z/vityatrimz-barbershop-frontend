@@ -86,7 +86,9 @@ const Header = (props) => {
 				{/* - The buttons that navigate to the different sections - */}
 				<ul>
 					<li>
-						<Link className="w-fit h-fit font-semibold text-xl">Login</Link>
+						<Link className="w-fit h-fit font-semibold text-xl border-3 border-black py-3 px-5 rounded-full">
+							Login
+						</Link>
 					</li>
 				</ul>
 			</nav>
