@@ -13,16 +13,19 @@ import { AboutUsPage } from '../../pages/about.us.page';
 import { FullpageNavigation } from '../ui/fullpage.navigation.ui';
 import { NavigationBar } from '../ui/navigation.bar.ui';
 
+import { HiHome } from 'react-icons/hi';
+import { FaAddressCard } from 'react-icons/fa';
+
 const pages = [
 	{
 		name: 'Welcome',
 		index: 0,
-		icon: <IoIosMenu className="h-7 w-auto my-auto" />,
+		icon: <HiHome className="h-7 w-auto my-auto" />,
 	},
 	{
 		name: 'About Us',
 		index: 1,
-		icon: <IoIosMenu className="h-7 w-auto my-auto" />,
+		icon: <FaAddressCard className="h-7 w-auto my-auto" />,
 	},
 ];
 
