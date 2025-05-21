@@ -39,27 +39,23 @@ const MainLayout = () => {
 		<main className="relative w-full h-full">
 			{/* - The main swiper component that contains all the slides - */}
 			<Swiper
-				direction="vertical"
-				slidesPerView={'auto'}
-				mousewheel={{ enabled: true, sensitivity: 0.5 }}
-				modules={[Scrollbar, Mousewheel]}
-				className="relative !w-full !h-full z-1"
-				rewind={true}
+				direction="vertical" // The direction of the swiper
+				slidesPerView={'auto'} // The number of slides to show at once, auto to fit the footer
+				mousewheel={{ enabled: true, sensitivity: 0.5 }} // Enable mouse wheel control
+				modules={[Scrollbar, Mousewheel]} // The modules to be used in the swiper
+				className="relative !w-full !h-full z-1" // The class name to be used in the swiper
+				speed={500} // The speed of the swiper
+				rewind={true} // Rewind the swiper to the first slide when reaching the last slide
 				onSlideChange={(swiper) => {
 					setActiveIndex(swiper.activeIndex);
-				}}
+				}} // The function to be called when the slide changes
 				onSwiper={(swiper) => {
 					setSwiper(swiper);
-				}}
+				}} // The function to be called when the swiper is initialized
 			>
 				{/* - The first slide that contains the header and the welcome page - */}
 				<SwiperSlide className="relative w-full !h-full flex flex-col">
 					<div className="relative w-full h-full flex flex-col">
-						<Header
-							swiper={swiper} // The swiper instance to be able to control the slides
-							sections={pages} // The sections to be displayed in the header
-							setActiveIndex={setActiveIndex} // A inherited function to set the active index
-						/>
 						<WelcomePage />
 					</div>
 				</SwiperSlide>
@@ -77,7 +73,7 @@ const MainLayout = () => {
 				className="absolute top-8 right-4 z-10 lg:hidden"
 				onClick={() => setIsNavbarOpen(true)}
 			>
-				<IoIosMenu className="w-9 h-9 fill-[var(--text)]" />
+				<IoIosMenu className="w-9 h-9 fill-[var(--sidebar)]" />
 			</button>
 			{/* - The swiper navigation dots on the right of the screen - */}
 			<FullpageNavigation

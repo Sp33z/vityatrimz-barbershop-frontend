@@ -5,6 +5,9 @@
 	--naviagtion: #000;
 	--text: #000;
 	--sidebar: #ddb361;
+
+	/* - Home colors - */
+	--welcome-faded: #ffffffbb;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -13,11 +16,15 @@
 		--naviagtion: #fff;
 		--text: #fff;
 		--sidebar: #ddb361;
+
+		/* - Home colors - */
+		--welcome-faded: #ffffffbb;
 	}
 }
 
 * {
 	box-sizing: border-box;
+	font-family: 'Courier New', Courier, monospace;
 	color: var(--text);
 }
 

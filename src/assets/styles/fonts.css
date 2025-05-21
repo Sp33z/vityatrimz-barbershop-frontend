@@ -23,3 +23,19 @@
 .font-sinister {
 	font-family: 'Sinister', sans-serif;
 }
+
+@font-face {
+	font-family: 'Poppins';
+	src: url('/src/assets/fonts/poppins.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+.font-poppins {
+	font-family: 'Poppins', sans-serif;
+}
+
+* {
+	font-family: 'Poppins', sans-serif;
+}

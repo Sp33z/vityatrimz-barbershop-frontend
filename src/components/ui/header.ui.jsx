@@ -23,10 +23,10 @@ const Header = (props) => {
 
 	/* - The header of the application that contains the logo - */
 	return (
-		<header className="realtive w-full h-fit flex p-5 items-center border-b-2 border-[var(--sidebar)]">
+		<header className="realtive w-full h-fit flex p-5 items-center">
 			{/* - The logo on the top of the navigation bar - */}
 			<Link className="relative w-fit h-fit">
-				<VityatrimzLogo className="w-auto h-15 lg:h-18" />
+				<VityatrimzLogo className="w-auto h-15 lg:h-18" fill="white" />
 			</Link>
 			{/* - The navigation bar that contains all the buttons - */}
 			<nav className="relative w-fit h-fit lg:flex mx-auto hidden gap-x-8 items-center">
@@ -41,7 +41,7 @@ const Header = (props) => {
 							<li>
 								{/* - The button that navigates to the different sections - */}
 								<button
-									className="w-fit h-fit font-semibold text-xl"
+									className="w-fit h-fit font-semibold text-xl !text-white"
 									onClick={() => {
 										setActiveIndex(pageIndex);
 										swiper.slideTo(pageIndex);
@@ -68,7 +68,7 @@ const Header = (props) => {
 							<li>
 								{/* - The button that navigates to the different sections - */}
 								<button
-									className="w-fit h-fit font-semibold text-xl"
+									className="w-fit h-fit font-semibold text-xl !text-white"
 									onClick={() => {
 										setActiveIndex(pageIndex);
 										swiper.slideTo(pageIndex);
