@@ -18,7 +18,7 @@ import { FaAddressCard } from 'react-icons/fa';
 
 const pages = [
 	{
-		name: 'Welcome',
+		name: 'Home',
 		index: 0,
 		icon: <HiHome className="h-7 w-auto my-auto" />,
 	},
@@ -54,7 +54,11 @@ const MainLayout = () => {
 			>
 				<SwiperSlide className="relative w-full !h-full flex flex-col">
 					<div className="relative w-full h-full flex flex-col">
-						<Header />
+						<Header
+							swiper={swiper} // The swiper instance to be able to control the slides
+							sections={pages} // The sections to be displayed in the header
+							setActiveIndex={setActiveIndex} // A inherited function to set the active index
+						/>
 						<WelcomePage />
 					</div>
 				</SwiperSlide>
@@ -82,7 +86,7 @@ const MainLayout = () => {
 			</Swiper>
 			{/* - The button to open the navigation bar for smaller resolution devices - */}
 			<button
-				className="absolute top-8 right-4 z-10"
+				className="absolute top-8 right-4 z-10 lg:hidden"
 				onClick={() => setIsNavbarOpen(true)}
 			>
 				<IoIosMenu className="w-9 h-9 fill-[var(--text)]" />
