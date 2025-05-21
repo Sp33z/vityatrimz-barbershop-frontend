@@ -27,12 +27,14 @@ const pages = [
 ];
 
 const MainLayout = () => {
-	const [swiper, setSwiper] = useState();
-	const [activeIndex, setActiveIndex] = useState(0);
-	const [isNavbarOpen, setIsNavbarOpen] = useState(false);
+	/* - The main layout of the application that contains all the slides and the navigation bar - */
+	const [swiper, setSwiper] = useState(); // The swiper instance to be able to control the slides
+	const [activeIndex, setActiveIndex] = useState(0); // The active index to be able to track the current showing slide
+	const [isNavbarOpen, setIsNavbarOpen] = useState(false); // A boolean to control the visibility of the navigation bar
 
 	return (
 		<main className="relative w-full h-full">
+			{/* - The main swiper component that contains all the slides - */}
 			<Swiper
 				direction="vertical"
 				slidesPerView={'auto'}
@@ -75,77 +77,31 @@ const MainLayout = () => {
 				</SwiperSlide>
 				<SwiperSlide className="w-full !h-fit">Footer</SwiperSlide>
 			</Swiper>
+			{/* - The button to open the navigation bar for smaller resolution devices - */}
 			<button
-				className="absolute top-7 right-4 z-10"
+				className="absolute top-8 right-4 z-10"
 				onClick={() => setIsNavbarOpen(true)}
 			>
 				<IoIosMenu className="w-9 h-9 fill-[var(--text)]" />
 			</button>
+			{/* - The swiper navigation dots on the right of the screen - */}
 			<FullpageNavigation
-				swiper={swiper}
-				activeIndex={activeIndex}
-				setActiveIndex={setActiveIndex}
-				sections={pages}
+				swiper={swiper} // The swiper instance to be able to control the slides
+				sections={pages} // The sections to be displayed in the navigation bar
+				activeIndex={activeIndex} // The active index to be able to track the current showing slide
+				setActiveIndex={setActiveIndex} // A inherited function to set the active index
 			/>
+			{/* - The navigation bar for the smaller resolution devices only - */}
 			<NavigationBar
-				activeIndex={activeIndex}
-				setActiveIndex={setActiveIndex}
-				sections={pages}
-				isNavbarOpen={isNavbarOpen}
-				setIsNavbarOpen={setIsNavbarOpen}
+				swiper={swiper} // The swiper instance to be able to control the slides
+				sections={pages} // The sections to be displayed in the navigation bar
+				activeIndex={activeIndex} // The active index to be able to track the current showing slide
+				setActiveIndex={setActiveIndex} // A inherited function to set the active index
+				isNavbarOpen={isNavbarOpen} // A boolean to control the visibility of the navigation bar
+				setIsNavbarOpen={setIsNavbarOpen} // A function to set the visibility of the navigation bar
 			/>
 		</main>
 	);
 };
-
-/*
-<main className="relative flex w-full h-screen landscape:">
-			<FullpageContainer
-				activeIndex={activeIndex}
-				setActiveIndex={setActiveIndex}
-				transitionDuration={550}
-			>
-				<FullpageSection>
-					<div className="content w-full h-full flex flex-col items-center justify-center">
-						<Header />
-						<WelcomePage setIsNavbarOpen={setIsNavbarOpen} />
-					</div>
-				</FullpageSection>
-				<FullpageSection>
-					<div className="content w-full h-full flex items-center justify-center">
-						<AboutUsPage />
-					</div>
-				</FullpageSection>
-				<FullpageSection>
-					<ServicesPage />
-				</FullpageSection>
-				<FullpageSection>
-					<div className="content flex items-center justify-center">
-						<p className="welcome-text">Welcome to Section 4</p>
-					</div>
-				</FullpageSection>
-			</FullpageContainer>
-			<button
-				className="absolute top-8 right-4 w-8 h-8 my-auto ml-auto flex lg:hidden"
-				onClick={() => setIsNavbarOpen(true)}
-			>
-				<FiMenu className="w-full h-full fill-[var(--text)]" />
-			</button>
-			<FullpageNavigation
-				activeIndex={activeIndex}
-				setActiveIndex={setActiveIndex}
-				sections={pages}
-				isNavbarOpen={isNavbarOpen}
-				setIsNavbarOpen={setIsNavbarOpen}
-			/>
-			<NavigationBar
-				activeIndex={activeIndex}
-				setActiveIndex={setActiveIndex}
-				sections={pages}
-				isNavbarOpen={isNavbarOpen}
-				setIsNavbarOpen={setIsNavbarOpen}
-			/>
-		</main>
-*/
 
 export { MainLayout };
