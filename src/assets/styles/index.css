@@ -1,0 +1,51 @@
+@import 'tailwindcss';
+
+:root {
+	--background: #fff;
+	--naviagtion: #000;
+	--text: #000;
+	--sidebar: #ddb361;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--background: #000;
+		--naviagtion: #fff;
+		--text: #fff;
+		--sidebar: #ddb361;
+	}
+}
+
+* {
+	box-sizing: border-box;
+	color: var(--text);
+}
+
+button {
+	cursor: pointer;
+}
+
+html,
+body,
+#root {
+	width: 100%;
+	min-height: 100%;
+	overflow: hidden;
+	height: 100%;
+	display: flex;
+	background: var(--background);
+	overscroll-behavior-y: none;
+}
+
+.react-fullpage__wrapper,
+.react-fullpage__contents {
+	overflow: hidden;
+	height: 100%;
+	width: 100%;
+}
+
+.react-fullpage__section {
+	display: flex;
+	width: 100%;
+	height: 100%;
+}

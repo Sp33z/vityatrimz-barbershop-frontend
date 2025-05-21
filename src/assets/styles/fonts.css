@@ -1,0 +1,25 @@
+/* Font import using @font-face */
+@font-face {
+	font-family: 'Joaquin';
+	src: url('/src/assets/fonts/joaquin.otf') format('opentype');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+.font-joaquin {
+	font-family: 'Joaquin', sans-serif;
+}
+
+/* Font import using @font-face */
+@font-face {
+	font-family: 'Sinister';
+	src: url('/src/assets/fonts/sinister.otf') format('opentype');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+.font-sinister {
+	font-family: 'Sinister', sans-serif;
+}
