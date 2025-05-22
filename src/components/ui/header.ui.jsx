@@ -1,22 +1,20 @@
-/**
- * Header component for the Vityatrimz application.
- * Displays the logo and navigation bar with section buttons.
- *
- * @param {Object} props - Component properties
- * @param {Object} props.swiper - Swiper instance to control slides
- * @param {Array} props.sections - Array of section objects containing name and index
- * @param {Function} props.setActiveIndex - Function to update the active section index
- * @returns {JSX.Element} Header component with navigation
- */
+/* - Import React functions - */
+import { useContext } from 'react';
 
+/* - React router import - */
 import { Link } from 'react-router-dom';
 
+/* - Importing the swiper context - */
+import { MainSwiperContext } from '../../contexts/main.swiper.context';
+
+/* - Importing the logo - */
 import { VityatrimzLogo } from '../../assets/images/vityatrimz.logo';
 
-const Header = (props) => {
-	const swiper = props.swiper; // The swiper instance to be able to control the slides
-	const pages = props.sections || []; // Define all the buttons with indexes and names
-	const setActiveIndex = props.setActiveIndex || (() => {}); // The function to set the active index
+/* - Importing the navigation points - */
+import { pages } from '../../data/pages.data';
+
+const Header = () => {
+	const { swiper, setActiveIndex } = useContext(MainSwiperContext); // Destructuring props to get swiper, sections, and setActiveIndex
 
 	const firstPart = pages.slice(0, pages.length / 2); // The first part of the pages (before the image)
 	const lastPart = pages.slice(pages.length / 2, pages.length); // The last part of the pages (after the image)
@@ -86,7 +84,7 @@ const Header = (props) => {
 				{/* - The buttons that navigate to the different sections - */}
 				<ul>
 					<li>
-						<Link className="w-fit h-fit font-semibold text-xl border-3 border-black py-3 px-5 rounded-full">
+						<Link className="w-fit h-fit font-semibold text-xl !text-white rounded-full">
 							Login
 						</Link>
 					</li>

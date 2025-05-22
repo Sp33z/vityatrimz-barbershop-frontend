@@ -1,36 +1,14 @@
-/**
- * @component FullpageNavigation
- *
- * @description
- * A navigation component designed for fullpage slide layouts. It displays a vertical navigation bar
- * positioned on the right side of the screen, showing dots for each page/section. The current active page
- * is highlighted with a filled dot and shows the page name. Clicking on a dot navigates to the corresponding page.
- *
- * @param {Object} props - Component props
- * @param {Object} [props.swiper] - Swiper instance for controlling slide navigation. Defaults to an object with activeIndex: 0
- * @param {Array<{index: number, name: string}>} [props.sections] - Array of page/section objects containing index and name. Defaults to empty array
- * @param {number} [props.activeIndex] - Current active page index. Defaults to 0
- * @param {Function} [props.setActiveIndex] - Function to update the active index. Defaults to a no-op function
- *
- * @returns {JSX.Element} A navigation component with dots representing pages and the current page name visible
- *
- * @example
- * <FullpageNavigation
- *   swiper={swiperInstance}
- *   sections={[{index: 0, name: "Home"}, {index: 1, name: "About"}]}
- *   activeIndex={currentIndex}
- *   setActiveIndex={setCurrentIndex}
- * />
- */
-
+/* - Import React functions - */
 import { useContext } from 'react';
 
+/* - Importing the navigation points - */
 import { pages } from '../../data/pages.data';
 
+/* - Importing Swiper to be able to scroll the swiper element - */
 import { MainSwiperContext } from '../../contexts/main.swiper.context';
 
 const FullpageNavigation = () => {
-	const { swiper, activeIndex, setActiveIndex } = useContext(MainSwiperContext);
+	const { swiper, activeIndex, setActiveIndex } = useContext(MainSwiperContext); // Destructuring props to get swiper nd setActiveIndex
 
 	return (
 		<nav className="absolute w-fit h-fit top-1/2 right-2 -translate-y-1/2 flex flex-col items-end gap-y-7 z-10">
