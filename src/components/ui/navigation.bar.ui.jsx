@@ -3,47 +3,31 @@
  * @description A sliding navigation bar component that displays a list of sections and provides navigation functionality.
  *
  * @param {Object} props - The component props
- * @param {Object} [props.swiper] - Swiper instance for controlling the slide navigation
- * @param {number} [props.swiper.activeIndex=0] - Active index from the swiper instance
- * @param {number} [props.activeIndex=0] - The currently active slide index
- * @param {Function} [props.setActiveIndex=() => {}] - Function to update the active slide index
- * @param {Array} [props.sections=[]] - Array of section objects to be displayed in the navigation
- * @param {Object} [props.sections[].icon] - React element for the section's icon
- * @param {string} [props.sections[].name] - Display name for the section
- * @param {number} [props.sections[].index] - Index of the slide this section corresponds to
  * @param {boolean} [props.isNavbarOpen=false] - Whether the navigation bar is currently open
  * @param {Function} [props.setIsNavbarOpen=() => {}] - Function to toggle the navigation bar visibility
  *
  * @returns {JSX.Element} A sliding navigation bar with sections and a login button
  *
- * @example
- * const sections = [
- *   { name: 'Home', index: 0, icon: <HomeIcon /> },
- *   { name: 'About', index: 1, icon: <AboutIcon /> }
- * ];
- *
  * <NavigationBar
- *   swiper={swiperInstance}
- *   activeIndex={currentIndex}
- *   setActiveIndex={setCurrentIndex}
- *   sections={sections}
  *   isNavbarOpen={menuOpen}
  *   setIsNavbarOpen={setMenuOpen}
  * />
  */
 
+import { useContext } from 'react';
+
 import { Link } from 'react-router-dom';
+
+import { MainSwiperContext } from '../../contexts/main.swiper.context';
+
+import { pages } from '../../data/pages.data';
 
 import { IoMdSearch } from 'react-icons/io';
 import { IoLogIn } from 'react-icons/io5';
-
 import { VityatrimzLogo } from '../../assets/images/vityatrimz.logo';
 
 const NavigationBar = (props) => {
-	const swiper = props.swiper || { activeIndex: 0 }; // Define swiper to be able to track the active index of the component // Swiper instance for controlling the navigation bar
-	const activeIndex = props.activeIndex || 0; // Define the default value of the active slide index
-	const setActiveIndex = props.setActiveIndex || (() => {}); // Function to set the active slide index
-	const sections = props.sections || []; // Array of sections to be displayed in the navigation bar
+	const { swiper, activeIndex, setActiveIndex } = useContext(MainSwiperContext); // Destructuring props to get swiper, activeIndex, setActiveIndex, and sections
 	const isNavbarOpen = props.isNavbarOpen || false; // Boolean to control the visibility of the navigation bar
 	const setIsNavbarOpen = props.setIsNavbarOpen || (() => {}); // Function to set the visibility of the navigation bar
 
@@ -77,7 +61,7 @@ const NavigationBar = (props) => {
 				<nav className="relative w-full h-full mt-10 flex flex-col">
 					<ul className="w-full h-full flex flex-col gap-y-3">
 						{/* - Looping through on all the elements contained by the sections array - */}
-						{sections.map((page, index) => {
+						{pages.map((page, index) => {
 							const icon = page.icon || (
 								<IoMdSearch className="h-7 w-auto my-auto" />
 							); // Default icon if not provided

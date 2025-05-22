@@ -23,11 +23,14 @@
  * />
  */
 
-const FullpageNavigation = (props) => {
-	const swiper = props.swiper || { activeIndex: 0 }; // Define swiper to be able to track the active index of the component
-	const pages = props.sections || []; // Define all the buttons with indexes and names
-	const activeIndex = props.activeIndex || 0; // The active index to be able to track the current showing slide
-	const setActiveIndex = props.setActiveIndex || (() => {}); // A inherited function to set the active index
+import { useContext } from 'react';
+
+import { pages } from '../../data/pages.data';
+
+import { MainSwiperContext } from '../../contexts/main.swiper.context';
+
+const FullpageNavigation = () => {
+	const { swiper, activeIndex, setActiveIndex } = useContext(MainSwiperContext);
 
 	return (
 		<nav className="absolute w-fit h-fit top-1/2 right-2 -translate-y-1/2 flex flex-col items-end gap-y-7 z-10">

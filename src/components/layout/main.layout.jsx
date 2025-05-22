@@ -1,38 +1,26 @@
-import { useState } from 'react';
+/* - Import React functions - */
+import { useContext, useState } from 'react';
 
+/* - Import Swiper dependencies - */
+import 'swiper/css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Scrollbar, Mousewheel } from 'swiper/modules';
+import { MainSwiperContext } from '../../contexts/main.swiper.context';
 
+/* - Import icons - */
 import { IoIosMenu } from 'react-icons/io';
 
-// Import Swiper styles
-import 'swiper/css';
-import { Header } from '../ui/header.ui';
+/* - Import pages/slides - */
 import { WelcomePage } from '../../pages/welcome.page';
 import { AboutUsPage } from '../../pages/about.us.page';
+
+/* - Import UI elements for navigation -  */
 import { FullpageNavigation } from '../ui/fullpage.navigation.ui';
 import { NavigationBar } from '../ui/navigation.bar.ui';
 
-import { HiHome } from 'react-icons/hi';
-import { FaAddressCard } from 'react-icons/fa';
-
-const pages = [
-	{
-		name: 'Home',
-		index: 0,
-		icon: <HiHome className="h-7 w-auto my-auto" />,
-	},
-	{
-		name: 'About Us',
-		index: 1,
-		icon: <FaAddressCard className="h-7 w-auto my-auto" />,
-	},
-];
-
 const MainLayout = () => {
 	/* - The main layout of the application that contains all the slides and the navigation bar - */
-	const [swiper, setSwiper] = useState(); // The swiper instance to be able to control the slides
-	const [activeIndex, setActiveIndex] = useState(0); // The active index to be able to track the current showing slide
+	const { setSwiper, setActiveIndex } = useContext(MainSwiperContext);
 	const [isNavbarOpen, setIsNavbarOpen] = useState(false); // A boolean to control the visibility of the navigation bar
 
 	return (
@@ -76,18 +64,9 @@ const MainLayout = () => {
 				<IoIosMenu className="w-9 h-9 fill-[var(--sidebar)]" />
 			</button>
 			{/* - The swiper navigation dots on the right of the screen - */}
-			<FullpageNavigation
-				swiper={swiper} // The swiper instance to be able to control the slides
-				sections={pages} // The sections to be displayed in the navigation bar
-				activeIndex={activeIndex} // The active index to be able to track the current showing slide
-				setActiveIndex={setActiveIndex} // A inherited function to set the active index
-			/>
+			<FullpageNavigation />
 			{/* - The navigation bar for the smaller resolution devices only - */}
 			<NavigationBar
-				swiper={swiper} // The swiper instance to be able to control the slides
-				sections={pages} // The sections to be displayed in the navigation bar
-				activeIndex={activeIndex} // The active index to be able to track the current showing slide
-				setActiveIndex={setActiveIndex} // A inherited function to set the active index
 				isNavbarOpen={isNavbarOpen} // A boolean to control the visibility of the navigation bar
 				setIsNavbarOpen={setIsNavbarOpen} // A function to set the visibility of the navigation bar
 			/>
