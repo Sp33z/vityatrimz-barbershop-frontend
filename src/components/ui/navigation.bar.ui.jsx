@@ -25,6 +25,7 @@ import { pages } from '../../data/pages.data';
 import { IoMdSearch } from 'react-icons/io';
 import { IoLogIn } from 'react-icons/io5';
 import { VityatrimzLogo } from '../../assets/images/vityatrimz.logo';
+import { MustacheSeparator } from './mustache.separator.ui';
 
 const NavigationBar = (props) => {
 	const { swiper, activeIndex, setActiveIndex } = useContext(MainSwiperContext); // Destructuring props to get swiper, activeIndex, setActiveIndex, and sections
@@ -87,8 +88,10 @@ const NavigationBar = (props) => {
 								</button>
 							);
 						})}
+						{/* - The mustache separator - */}
+						<MustacheSeparator className={'opacity-50 my-auto'} />
 						{/* - The static buttons of the navigation bar - */}
-						<button className="w-full p-3 flex flex-row mt-auto opacity-60 duration-300">
+						<button className="w-full p-3 flex flex-row opacity-60 duration-300">
 							{<IoLogIn className="h-7 w-auto my-auto" />}
 							<p className="ml-3 my-auto font-bold pt-1 text-base">Log in</p>
 						</button>

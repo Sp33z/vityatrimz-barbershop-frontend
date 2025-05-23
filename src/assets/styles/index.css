@@ -4,6 +4,7 @@
 	--background: #fff;
 	--naviagtion: #000;
 	--text: #000;
+	--text-faded: #00000083;
 	--sidebar: #ddb361;
 
 	/* - Home colors - */
@@ -15,6 +16,7 @@
 		--background: #000;
 		--naviagtion: #fff;
 		--text: #fff;
+		--text-faded: #ffffffbb;
 		--sidebar: #ddb361;
 
 		/* - Home colors - */

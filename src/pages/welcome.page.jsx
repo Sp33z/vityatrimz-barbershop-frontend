@@ -15,9 +15,9 @@ const WelcomePage = () => {
 				<Header />
 				{/* - The welcome message that contains the welcome text - */}
 				<div className="relative h-fit w-fit flex flex-col m-auto p-10 items-center gap-y-7 animation-fade-in-up lg:gap-y-10">
-					<h5 className="w-fit h-fit flex !text-[var(--welcome-faded)] text-xl font-semibold lg:text-3xl">
+					<h5 className="w-fit h-fit flex !text-[var(--welcome-faded)] font-semibold lg:text-3xl">
 						Welcome to{' '}
-						<span className="ml-1.5 !text-white flex flex-col text-3xl font-sinister tracking-wider -translate-y-1 lg:-translate-y-1.5 lg:text-5xl lg:ml-3">
+						<span className="ml-1.5 !text-white flex flex-col text-2xl font-sinister tracking-wider -translate-y-1 lg:-translate-y-1.5 lg:text-5xl lg:ml-3">
 							Vityatrimz
 							<br />
 							<p className="text-xs mx-auto font-semibold !text-[var(--welcome-faded)]">
@@ -26,7 +26,7 @@ const WelcomePage = () => {
 						</span>
 						!
 					</h5>
-					<h3 className="!text-white text-4xl font-bold text-center lg:text-5xl">
+					<h3 className="!text-white text-3xl font-bold text-center lg:text-5xl">
 						Come take a seat and relax.
 						<br /> You’re in good hands.
 					</h3>

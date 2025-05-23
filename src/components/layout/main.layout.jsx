@@ -53,12 +53,17 @@ const MainLayout = () => {
 						<AboutUsPage />
 					</div>
 				</SwiperSlide>
+				<SwiperSlide className="w-full !h-full flex flex-col">
+					<div className="relative w-full h-full flex flex-col">
+						<AboutUsPage />
+					</div>
+				</SwiperSlide>
 				{/* - The third slide that contains the footer - */}
 				<SwiperSlide className="w-full !h-fit">Footer</SwiperSlide>
 			</Swiper>
 			{/* - The button to open the navigation bar for smaller resolution devices - */}
 			<button
-				className="absolute top-8 right-4 z-10 lg:hidden"
+				className="absolute top-7 right-4 z-10 lg:hidden"
 				onClick={() => setIsNavbarOpen(true)}
 			>
 				<IoIosMenu className="w-9 h-9 fill-[var(--sidebar)]" />
