@@ -26,13 +26,13 @@ const AboutUsPage = () => {
 			</div>
 			{/* - The second section that contains the information about the barbershop - */}
 			<div className="relative w-full h-fit flex flex-col gap-y-1 lg:p-10 lg:h-full">
-				<h3 className="font-sinister font-bold text-2xl tracking-wider lg:text-6xl">
+				<h3 className="font-sinister font-bold text-2xl tracking-wider lg:text-6xl mb-auto">
 					About us
 				</h3>
-				<p className="font-semibold !text-[var(--text)] opacity-60 text-sm lg:text-xl my-auto">
+				<p className="font-semibold !text-[var(--text)] opacity-60 text-xs lg:text-xl my-auto">
 					Welcome to Kolárovo’s go-to barbershop.
 				</p>
-				<p className="font-semibold !text-[var(--text)] opacity-60 text-sm lg:text-xl my-auto">
+				<p className="font-semibold !text-[var(--text)] opacity-60 text-xs lg:text-xl my-auto">
 					Since opening our doors in 2021, we've been serving fresh fades, clean
 					beard work, and next-level style — all delivered by one passionate
 					barber dedicated to his craft.
@@ -41,22 +41,24 @@ const AboutUsPage = () => {
 					What Makes Us Stand Out
 				</h3>
 				<ul className="relative w-full h-fit flex flex-col opacity-60 px-5 text-xs lg:text-lg my-auto">
-					<li className="font-semibold border-b-2 py-2 border-b-[var(--text-faded)]  ">
+					<li className="font-semibold border-b-2 py-2 border-b-[var(--text-faded)] lg:py-5 ">
 						01. Full focus, no distractions
 					</li>
-					<li className="font-semibold border-b-2 py-2 border-b-[var(--text-faded)] ">
+					<li className="font-semibold border-b-2 py-2 border-b-[var(--text-faded)] lg:py-5">
 						02. Consistent results
 					</li>
-					<li className="font-semibold border-b-2 py-2 border-b-[var(--text-faded)] ">
+					<li className="font-semibold border-b-2 py-2 border-b-[var(--text-faded)] lg:py-5">
 						03. Built on trust
 					</li>
-					<li className="font-semibold border-b-2 py-2 border-b-[var(--text-faded)] ">
+					<li className="font-semibold border-b-2 py-2 border-b-[var(--text-faded)] lg:py-5">
 						04. Modern styles with classic precision
 					</li>
-					<li className="font-semibold border-b-2 py-2 border-b-[var(--text-faded)] ">
+					<li className="font-semibold border-b-2 py-2 border-b-[var(--text-faded)] lg:py-5">
 						05. Clean, professional, private
 					</li>
-					<li className="font-semibold py-2">06. Flexible appointments</li>
+					<li className="font-semibold py-2 lg:py-5">
+						06. Flexible appointments
+					</li>
 				</ul>
 				<p className="font-semibold !text-[var(--text)] text-center font-sinister text-2xl lg:text-4xl mt-auto">
 					Book your cut. Feel the difference.
